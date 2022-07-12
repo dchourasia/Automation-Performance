@@ -1,0 +1,2 @@
+locust -f authors_locust.py -H https://fakerestapi.azurewebsites.net --csv report --csv-full-history --html reports/summary-report.html
+locust-reporter -dir . -prefix report -outfile reports/detailed-report.html

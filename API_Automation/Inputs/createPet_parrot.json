@@ -1,0 +1,18 @@
+{
+  "id": 1,
+  "category": {
+    "id": 1,
+    "name": "bird"
+  },
+  "name": "parrot",
+  "photoUrls": [
+    "https://lafeber.com/pet-birds/wp-content/uploads/2018/06/Indian-Ring-Necked-Parakeet.jpg"
+  ],
+  "tags": [
+    {
+      "id": 1,
+      "name": "Parakeet"
+    }
+  ],
+  "status": "available"
+}

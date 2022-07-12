@@ -1,0 +1,1938 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.3 (Python 3.7.5 on win32)" generated="20220712 16:49:36.000" rpa="false" schemaversion="2">
+<suite id="s1" name="PetStore Pets &amp; PetStore Users">
+<suite id="s1-s1" name="PetStore Pets" source="C:\API Automation\Robot\github\Automation-Performance\API_Automation\PetStore_Pets.robot">
+<test id="s1-s1-t1" name="Create multiple pets">
+<kw name="Make REST Request" library="RESTLibrary">
+<arg>Create Pet - Dog</arg>
+<arg>https://petstore.swagger.io/v2/pet</arg>
+<arg>method=POST</arg>
+<arg>requestHeaders={'Content-Type': 'application/json', 'Accept' : 'application/json'}</arg>
+<arg>requestBody=${EXECDIR}/Inputs/createPet_dog.json</arg>
+<arg>expectedStatusCode=200</arg>
+<arg>expectedResponseBody=${EXECDIR}/Baselines/createPetDogBaseline.json</arg>
+<msg timestamp="20220712 16:49:36.096" level="INFO">${requestInfo} = &lt;Framework.RequestInfo.RequestInfo object at 0x000001D70790BB08&gt;</msg>
+<kw name="Generate REST Request" library="InputGenerator">
+<arg>${requestInfo}</arg>
+<kw name="Generate URL" library="InputGenerator">
+<arg>${requestInfo}</arg>
+<kw name="Log" library="BuiltIn">
+<arg>${requestInfo.url}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220712 16:49:36.103" level="INFO">https://petstore.swagger.io/v2/pet</msg>
+<status status="PASS" starttime="20220712 16:49:36.103" endtime="20220712 16:49:36.103"/>
+</kw>
+<status status="PASS" starttime="20220712 16:49:36.103" endtime="20220712 16:49:36.103"/>
+</kw>
+<kw name="Generate Request Headers" library="InputGenerator">
+<arg>${requestInfo}</arg>
+<kw name="Log" library="BuiltIn">
+<arg>${requestInfo.requestHeaders}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220712 16:49:36.103" level="INFO">{'Content-Type': 'application/json', 'Accept': 'application/json'}</msg>
+<status status="PASS" starttime="20220712 16:49:36.103" endtime="20220712 16:49:36.103"/>
+</kw>
+<status status="PASS" starttime="20220712 16:49:36.103" endtime="20220712 16:49:36.103"/>
+</kw>
+<kw name="Generate Request Body" library="InputGenerator">
+<arg>${requestInfo}</arg>
+<kw name="Log" library="BuiltIn">
+<arg>${requestInfo.requestBody}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220712 16:49:36.107" level="INFO">{
+  "id": 1,
+  "category": {
+    "id": 1,
+    "name": "animal"
+  },
+  "name": "dog",
+  "photoUrls": [
+    "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/golden-retriever-royalty-free-image-506756303-1560962726.jpg"
+  ],
+  "tags": [
+    {
+      "id": 1,
+      "name": "german shepherd"
+    }
+  ],
+  "status": "available"
+}</msg>
+<status status="PASS" starttime="20220712 16:49:36.107" endtime="20220712 16:49:36.107"/>
+</kw>
+<status status="PASS" starttime="20220712 16:49:36.103" endtime="20220712 16:49:36.107"/>
+</kw>
+<status status="PASS" starttime="20220712 16:49:36.103" endtime="20220712 16:49:36.107"/>
+</kw>
+<msg timestamp="20220712 16:49:36.107" level="INFO">${requestInfo} = &lt;Framework.RequestInfo.RequestInfo object at 0x000001D70790BB08&gt;</msg>
+<kw name="Process REST Request" library="RequestProcessor">
+<arg>${requestInfo}</arg>
+<kw name="Log" library="BuiltIn">
+<arg>${requestInfo.responseBody}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220712 16:49:37.366" level="INFO">{
+    "id": 1,
+    "category": {
+        "id": 1,
+        "name": "animal"
+    },
+    "name": "dog",
+    "photoUrls": [
+        "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/golden-retriever-royalty-free-image-506756303-1560962726.jpg"
+    ],
+    "tags": [
+        {
+            "id": 1,
+            "name": "german shepherd"
+        }
+    ],
+    "status": "available"
+}</msg>
+<status status="PASS" starttime="20220712 16:49:37.366" endtime="20220712 16:49:37.366"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${requestInfo.responseHeaders}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220712 16:49:37.366" level="INFO">{
+    "Date": "Tue, 12 Jul 2022 11:19:35 GMT",
+    "Content-Type": "application/json",
+    "Transfer-Encoding": "chunked",
+    "Connection": "keep-alive",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Methods": "GET, POST, DELETE, PUT",
+    "Access-Control-Allow-Headers": "Content-Type, api_key, Authorization",
+    "Server": "Jetty(9.2.9.v20150224)"
+}</msg>
+<status status="PASS" starttime="20220712 16:49:37.366" endtime="20220712 16:49:37.366"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${requestInfo.responseStatusCode}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220712 16:49:37.366" level="INFO">200</msg>
+<status status="PASS" starttime="20220712 16:49:37.366" endtime="20220712 16:49:37.366"/>
+</kw>
+<status status="PASS" starttime="20220712 16:49:36.288" endtime="20220712 16:49:37.370"/>
+</kw>
+<msg timestamp="20220712 16:49:37.370" level="INFO">${requestInfo} = &lt;Framework.RequestInfo.RequestInfo object at 0x000001D70790BB08&gt;</msg>
+<kw name="Validate Response Against Baselines" library="BaselineValidator">
+<arg>${requestInfo}</arg>
+<kw name="Validate Response Body" library="BaselineValidator">
+<arg>${requestInfo}</arg>
+<kw name="Log" library="BuiltIn">
+<arg>${requestInfo.expectedResponseBody}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220712 16:49:37.374" level="INFO">{
+    "id": 1,
+    "category": {
+        "id": 1,
+        "name": "animal"
+    },
+    "name": "dog",
+    "photoUrls": [
+        "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/golden-retriever-royalty-free-image-506756303-1560962726.jpg"
+    ],
+    "tags": [
+        {
+            "id": 1,
+            "name": "german shepherd"
+        }
+    ],
+    "status": "available"
+}</msg>
+<status status="PASS" starttime="20220712 16:49:37.374" endtime="20220712 16:49:37.378"/>
+</kw>
+<status status="PASS" starttime="20220712 16:49:37.374" endtime="20220712 16:49:37.378"/>
+</kw>
+<kw name="Validate Status Code" library="BaselineValidator">
+<arg>${requestInfo}</arg>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>200</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20220712 16:49:37.379" endtime="20220712 16:49:37.379"/>
+</kw>
+<status status="PASS" starttime="20220712 16:49:37.378" endtime="20220712 16:49:37.379"/>
+</kw>
+<status status="PASS" starttime="20220712 16:49:37.374" endtime="20220712 16:49:37.379"/>
+</kw>
+<msg timestamp="20220712 16:49:37.379" level="INFO">${requestInfo} = &lt;Framework.RequestInfo.RequestInfo object at 0x000001D70790BB08&gt;</msg>
+<status status="PASS" starttime="20220712 16:49:36.096" endtime="20220712 16:49:37.379"/>
+</kw>
+<kw name="Make REST Request" library="RESTLibrary">
+<arg>Create Pet - Parrot</arg>
+<arg>https://petstore.swagger.io/v2/pet</arg>
+<arg>method=POST</arg>
+<arg>requestHeaders={'Content-Type': 'application/json', 'Accept' : 'application/json'}</arg>
+<arg>requestBody=${EXECDIR}/Inputs/createPet_parrot.json</arg>
+<arg>expectedStatusCode=200</arg>
+<arg>expectedResponseBody=${EXECDIR}/Baselines/createPetParrotBaseline.json</arg>
+<msg timestamp="20220712 16:49:37.381" level="INFO">${requestInfo} = &lt;Framework.RequestInfo.RequestInfo object at 0x000001D70790BD08&gt;</msg>
+<kw name="Generate REST Request" library="InputGenerator">
+<arg>${requestInfo}</arg>
+<kw name="Generate URL" library="InputGenerator">
+<arg>${requestInfo}</arg>
+<kw name="Log" library="BuiltIn">
+<arg>${requestInfo.url}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220712 16:49:37.381" level="INFO">https://petstore.swagger.io/v2/pet</msg>
+<status status="PASS" starttime="20220712 16:49:37.381" endtime="20220712 16:49:37.381"/>
+</kw>
+<status status="PASS" starttime="20220712 16:49:37.381" endtime="20220712 16:49:37.381"/>
+</kw>
+<kw name="Generate Request Headers" library="InputGenerator">
+<arg>${requestInfo}</arg>
+<kw name="Log" library="BuiltIn">
+<arg>${requestInfo.requestHeaders}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220712 16:49:37.381" level="INFO">{'Content-Type': 'application/json', 'Accept': 'application/json'}</msg>
+<status status="PASS" starttime="20220712 16:49:37.381" endtime="20220712 16:49:37.381"/>
+</kw>
+<status status="PASS" starttime="20220712 16:49:37.381" endtime="20220712 16:49:37.381"/>
+</kw>
+<kw name="Generate Request Body" library="InputGenerator">
+<arg>${requestInfo}</arg>
+<kw name="Log" library="BuiltIn">
+<arg>${requestInfo.requestBody}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220712 16:49:37.385" level="INFO">{
+  "id": 1,
+  "category": {
+    "id": 1,
+    "name": "bird"
+  },
+  "name": "parrot",
+  "photoUrls": [
+    "https://lafeber.com/pet-birds/wp-content/uploads/2018/06/Indian-Ring-Necked-Parakeet.jpg"
+  ],
+  "tags": [
+    {
+      "id": 1,
+      "name": "Parakeet"
+    }
+  ],
+  "status": "available"
+}</msg>
+<status status="PASS" starttime="20220712 16:49:37.385" endtime="20220712 16:49:37.385"/>
+</kw>
+<status status="PASS" starttime="20220712 16:49:37.381" endtime="20220712 16:49:37.385"/>
+</kw>
+<status status="PASS" starttime="20220712 16:49:37.381" endtime="20220712 16:49:37.385"/>
+</kw>
+<msg timestamp="20220712 16:49:37.385" level="INFO">${requestInfo} = &lt;Framework.RequestInfo.RequestInfo object at 0x000001D70790BD08&gt;</msg>
+<kw name="Process REST Request" library="RequestProcessor">
+<arg>${requestInfo}</arg>
+<kw name="Log" library="BuiltIn">
+<arg>${requestInfo.responseBody}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220712 16:49:38.411" level="INFO">{
+    "id": 1,
+    "category": {
+        "id": 1,
+        "name": "bird"
+    },
+    "name": "parrot",
+    "photoUrls": [
+        "https://lafeber.com/pet-birds/wp-content/uploads/2018/06/Indian-Ring-Necked-Parakeet.jpg"
+    ],
+    "tags": [
+        {
+            "id": 1,
+            "name": "Parakeet"
+        }
+    ],
+    "status": "available"
+}</msg>
+<status status="PASS" starttime="20220712 16:49:38.409" endtime="20220712 16:49:38.411"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${requestInfo.responseHeaders}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220712 16:49:38.412" level="INFO">{
+    "Date": "Tue, 12 Jul 2022 11:19:36 GMT",
+    "Content-Type": "application/json",
+    "Transfer-Encoding": "chunked",
+    "Connection": "keep-alive",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Methods": "GET, POST, DELETE, PUT",
+    "Access-Control-Allow-Headers": "Content-Type, api_key, Authorization",
+    "Server": "Jetty(9.2.9.v20150224)"
+}</msg>
+<status status="PASS" starttime="20220712 16:49:38.411" endtime="20220712 16:49:38.412"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${requestInfo.responseStatusCode}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220712 16:49:38.413" level="INFO">200</msg>
+<status status="PASS" starttime="20220712 16:49:38.412" endtime="20220712 16:49:38.413"/>
+</kw>
+<status status="PASS" starttime="20220712 16:49:37.385" endtime="20220712 16:49:38.413"/>
+</kw>
+<msg timestamp="20220712 16:49:38.413" level="INFO">${requestInfo} = &lt;Framework.RequestInfo.RequestInfo object at 0x000001D70790BD08&gt;</msg>
+<kw name="Validate Response Against Baselines" library="BaselineValidator">
+<arg>${requestInfo}</arg>
+<kw name="Validate Response Body" library="BaselineValidator">
+<arg>${requestInfo}</arg>
+<kw name="Log" library="BuiltIn">
+<arg>${requestInfo.expectedResponseBody}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220712 16:49:38.418" level="INFO">{
+  "id": 1,
+  "category": {
+    "id": 1,
+    "name": "bird"
+  },
+  "name": "parrot",
+  "photoUrls": [
+    "https://lafeber.com/pet-birds/wp-content/uploads/2018/06/Indian-Ring-Necked-Parakeet.jpg"
+  ],
+  "tags": [
+    {
+      "id": 1,
+      "name": "Parakeet"
+    }
+  ],
+  "status": "available"
+}</msg>
+<status status="PASS" starttime="20220712 16:49:38.418" endtime="20220712 16:49:38.418"/>
+</kw>
+<status status="PASS" starttime="20220712 16:49:38.416" endtime="20220712 16:49:38.418"/>
+</kw>
+<kw name="Validate Status Code" library="BaselineValidator">
+<arg>${requestInfo}</arg>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>200</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20220712 16:49:38.418" endtime="20220712 16:49:38.418"/>
+</kw>
+<status status="PASS" starttime="20220712 16:49:38.418" endtime="20220712 16:49:38.418"/>
+</kw>
+<status status="PASS" starttime="20220712 16:49:38.416" endtime="20220712 16:49:38.418"/>
+</kw>
+<msg timestamp="20220712 16:49:38.418" level="INFO">${requestInfo} = &lt;Framework.RequestInfo.RequestInfo object at 0x000001D70790BD08&gt;</msg>
+<status status="PASS" starttime="20220712 16:49:37.379" endtime="20220712 16:49:38.418"/>
+</kw>
+<tag>demo</tag>
+<tag>dev</tag>
+<tag>poc</tag>
+<status status="PASS" starttime="20220712 16:49:36.096" endtime="20220712 16:49:38.418"/>
+</test>
+<test id="s1-s1-t2" name="Update pet's status and other details">
+<kw name="Make REST Request" library="RESTLibrary">
+<arg>Update Pet - Dog</arg>
+<arg>https://petstore.swagger.io/v2/pet</arg>
+<arg>method=PUT</arg>
+<arg>requestHeaders={'Content-Type': 'application/json', 'Accept' : 'application/json'}</arg>
+<arg>requestBody=${EXECDIR}/Inputs/updatePet_dog.json</arg>
+<arg>expectedStatusCode=200</arg>
+<arg>expectedResponseBody=${EXECDIR}/Baselines/updatePetDogBaseline.json</arg>
+<msg timestamp="20220712 16:49:38.423" level="INFO">${requestInfo} = &lt;Framework.RequestInfo.RequestInfo object at 0x000001D707C05708&gt;</msg>
+<kw name="Generate REST Request" library="InputGenerator">
+<arg>${requestInfo}</arg>
+<kw name="Generate URL" library="InputGenerator">
+<arg>${requestInfo}</arg>
+<kw name="Log" library="BuiltIn">
+<arg>${requestInfo.url}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220712 16:49:38.427" level="INFO">https://petstore.swagger.io/v2/pet</msg>
+<status status="PASS" starttime="20220712 16:49:38.423" endtime="20220712 16:49:38.427"/>
+</kw>
+<status status="PASS" starttime="20220712 16:49:38.423" endtime="20220712 16:49:38.427"/>
+</kw>
+<kw name="Generate Request Headers" library="InputGenerator">
+<arg>${requestInfo}</arg>
+<kw name="Log" library="BuiltIn">
+<arg>${requestInfo.requestHeaders}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220712 16:49:38.429" level="INFO">{'Content-Type': 'application/json', 'Accept': 'application/json'}</msg>
+<status status="PASS" starttime="20220712 16:49:38.428" endtime="20220712 16:49:38.429"/>
+</kw>
+<status status="PASS" starttime="20220712 16:49:38.427" endtime="20220712 16:49:38.429"/>
+</kw>
+<kw name="Generate Request Body" library="InputGenerator">
+<arg>${requestInfo}</arg>
+<kw name="Log" library="BuiltIn">
+<arg>${requestInfo.requestBody}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220712 16:49:38.432" level="INFO">{
+  "id": 1,
+  "category": {
+    "id": 1,
+    "name": "animal"
+  },
+  "name": "dog",
+  "photoUrls": [
+    "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/golden-retriever-royalty-free-image-506756303-1560962726.jpg"
+  ],
+  "tags": [
+    {
+      "id": 1,
+      "name": "husky"
+    }
+  ],
+  "status": "sold"
+}</msg>
+<status status="PASS" starttime="20220712 16:49:38.431" endtime="20220712 16:49:38.432"/>
+</kw>
+<status status="PASS" starttime="20220712 16:49:38.429" endtime="20220712 16:49:38.432"/>
+</kw>
+<status status="PASS" starttime="20220712 16:49:38.423" endtime="20220712 16:49:38.432"/>
+</kw>
+<msg timestamp="20220712 16:49:38.432" level="INFO">${requestInfo} = &lt;Framework.RequestInfo.RequestInfo object at 0x000001D707C05708&gt;</msg>
+<kw name="Process REST Request" library="RequestProcessor">
+<arg>${requestInfo}</arg>
+<kw name="Log" library="BuiltIn">
+<arg>${requestInfo.responseBody}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220712 16:49:39.413" level="INFO">{
+    "id": 1,
+    "category": {
+        "id": 1,
+        "name": "animal"
+    },
+    "name": "dog",
+    "photoUrls": [
+        "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/golden-retriever-royalty-free-image-506756303-1560962726.jpg"
+    ],
+    "tags": [
+        {
+            "id": 1,
+            "name": "husky"
+        }
+    ],
+    "status": "sold"
+}</msg>
+<status status="PASS" starttime="20220712 16:49:39.413" endtime="20220712 16:49:39.413"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${requestInfo.responseHeaders}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220712 16:49:39.417" level="INFO">{
+    "Date": "Tue, 12 Jul 2022 11:19:37 GMT",
+    "Content-Type": "application/json",
+    "Transfer-Encoding": "chunked",
+    "Connection": "keep-alive",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Methods": "GET, POST, DELETE, PUT",
+    "Access-Control-Allow-Headers": "Content-Type, api_key, Authorization",
+    "Server": "Jetty(9.2.9.v20150224)"
+}</msg>
+<status status="PASS" starttime="20220712 16:49:39.417" endtime="20220712 16:49:39.417"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${requestInfo.responseStatusCode}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220712 16:49:39.417" level="INFO">200</msg>
+<status status="PASS" starttime="20220712 16:49:39.417" endtime="20220712 16:49:39.417"/>
+</kw>
+<status status="PASS" starttime="20220712 16:49:38.432" endtime="20220712 16:49:39.417"/>
+</kw>
+<msg timestamp="20220712 16:49:39.417" level="INFO">${requestInfo} = &lt;Framework.RequestInfo.RequestInfo object at 0x000001D707C05708&gt;</msg>
+<kw name="Validate Response Against Baselines" library="BaselineValidator">
+<arg>${requestInfo}</arg>
+<kw name="Validate Response Body" library="BaselineValidator">
+<arg>${requestInfo}</arg>
+<kw name="Log" library="BuiltIn">
+<arg>${requestInfo.expectedResponseBody}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220712 16:49:39.421" level="INFO">{
+    "id": 1,
+    "category": {
+        "id": 1,
+        "name": "animal"
+    },
+    "name": "dog",
+    "photoUrls": [
+        "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/golden-retriever-royalty-free-image-506756303-1560962726.jpg"
+    ],
+    "tags": [
+        {
+            "id": 1,
+            "name": "husky"
+        }
+    ],
+    "status": "sold"
+}</msg>
+<status status="PASS" starttime="20220712 16:49:39.421" endtime="20220712 16:49:39.421"/>
+</kw>
+<status status="PASS" starttime="20220712 16:49:39.417" endtime="20220712 16:49:39.421"/>
+</kw>
+<kw name="Validate Status Code" library="BaselineValidator">
+<arg>${requestInfo}</arg>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>200</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20220712 16:49:39.421" endtime="20220712 16:49:39.421"/>
+</kw>
+<status status="PASS" starttime="20220712 16:49:39.421" endtime="20220712 16:49:39.421"/>
+</kw>
+<status status="PASS" starttime="20220712 16:49:39.417" endtime="20220712 16:49:39.421"/>
+</kw>
+<msg timestamp="20220712 16:49:39.421" level="INFO">${requestInfo} = &lt;Framework.RequestInfo.RequestInfo object at 0x000001D707C05708&gt;</msg>
+<status status="PASS" starttime="20220712 16:49:38.423" endtime="20220712 16:49:39.421"/>
+</kw>
+<tag>demo</tag>
+<tag>dev</tag>
+<tag>poc</tag>
+<status status="PASS" starttime="20220712 16:49:38.422" endtime="20220712 16:49:39.421"/>
+</test>
+<test id="s1-s1-t3" name="Get pet by status and verify updated status of pet">
+<kw name="Make REST Request" library="RESTLibrary">
+<var>${requestInfo}</var>
+<arg>Get pets by status</arg>
+<arg>https://petstore.swagger.io/v2/pet/findByStatus?status=sold</arg>
+<arg>method=GET</arg>
+<arg>requestHeaders={'Accept' : 'application/json'}</arg>
+<arg>expectedStatusCode=200</arg>
+<msg timestamp="20220712 16:49:39.425" level="INFO">${requestInfo} = &lt;Framework.RequestInfo.RequestInfo object at 0x000001D70790B648&gt;</msg>
+<kw name="Generate REST Request" library="InputGenerator">
+<arg>${requestInfo}</arg>
+<kw name="Generate URL" library="InputGenerator">
+<arg>${requestInfo}</arg>
+<kw name="Log" library="BuiltIn">
+<arg>${requestInfo.url}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220712 16:49:39.427" level="INFO">https://petstore.swagger.io/v2/pet/findByStatus?status=sold</msg>
+<status status="PASS" starttime="20220712 16:49:39.427" endtime="20220712 16:49:39.427"/>
+</kw>
+<status status="PASS" starttime="20220712 16:49:39.427" endtime="20220712 16:49:39.427"/>
+</kw>
+<kw name="Generate Request Headers" library="InputGenerator">
+<arg>${requestInfo}</arg>
+<kw name="Log" library="BuiltIn">
+<arg>${requestInfo.requestHeaders}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220712 16:49:39.427" level="INFO">{'Accept': 'application/json'}</msg>
+<status status="PASS" starttime="20220712 16:49:39.427" endtime="20220712 16:49:39.427"/>
+</kw>
+<status status="PASS" starttime="20220712 16:49:39.427" endtime="20220712 16:49:39.427"/>
+</kw>
+<status status="PASS" starttime="20220712 16:49:39.425" endtime="20220712 16:49:39.427"/>
+</kw>
+<msg timestamp="20220712 16:49:39.427" level="INFO">${requestInfo} = &lt;Framework.RequestInfo.RequestInfo object at 0x000001D70790B648&gt;</msg>
+<kw name="Process REST Request" library="RequestProcessor">
+<arg>${requestInfo}</arg>
+<kw name="Log" library="BuiltIn">
+<arg>${requestInfo.responseBody}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220712 16:49:40.647" level="INFO">[
+    {
+        "id": 813855,
+        "category": {
+            "id": 268410,
+            "name": "HMJTJYZBF"
+        },
+        "name": "DPVMZNUDL",
+        "photoUrls": [
+            "ZFDMLD",
+            "YHKAOM"
+        ],
+        "tags": [
+            {
+                "id": 879644,
+                "name": "VEDVOI"
+            },
+            {
+                "id": 362085,
+                "name": "UWDCUGFXM"
+            },
+            {
+                "id": 232686,
+                "name": "BDQKJQL"
+            },
+            {
+                "id": 279271,
+                "name": "CVFHADCQAP"
+            },
+            {
+                "id": 659566,
+                "name": "BFSVMDHAEE"
+            },
+            {
+                "id": 451183,
+                "name": "NRNYCPNDN"
+            }
+        ],
+        "status": "sold"
+    },
+    {
+        "id": 304038,
+        "category": {
+            "id": 888614,
+            "name": "ODNMS"
+        },
+        "name": "YGQOICXES",
+        "photoUrls": [
+            "RVYVOT",
+            "BDESLW",
+            "JCVYZH"
+        ],
+        "tags": [
+            {
+                "id": 956358,
+                "name": "CPAPFXJUO"
+            },
+            {
+                "id": 584831,
+                "name": "NRXZQMDN"
+            },
+            {
+                "id": 955235,
+                "name": "PEKYVQHSAQ"
+            },
+            {
+                "id": 673746,
+                "name": "CKWCLCTVAD"
+            }
+        ],
+        "status": "sold"
+    },
+    {
+        "id": 1327,
+        "category": {
+            "id": 101,
+            "name": "testcategory"
+        },
+        "name": "valueimplcat",
+        "photoUrls": [
+            "a.png",
+            "b.png"
+        ],
+        "tags": [
+            {
+                "id": 102,
+                "name": "testtag1"
+            },
+            {
+                "id": 103,
+                "name": "testtag2"
+            }
+        ],
+        "status": "sold"
+    },
+    {
+        "id": 1567,
+        "category": {
+            "id": 101,
+            "name": "testcategory"
+        },
+        "name": "valueimplcat",
+        "photoUrls": [
+            "a.png",
+            "b.png"
+        ],
+        "tags": [
+            {
+                "id": 102,
+                "name": "testtag1"
+            },
+            {
+                "id": 103,
+                "name": "testtag2"
+            }
+        ],
+        "status": "sold"
+    },
+    {
+        "id": 9223372036854020270,
+        "name": "Marinus670",
+        "photoUrls": [],
+        "tags": [],
+        "status": "sold"
+    },
+    {
+        "id": 963395,
+        "category": {
+            "id": 941362,
+            "name": "UVNLNJVVTS"
+        },
+        "name": "RKPOQXHU",
+        "photoUrls": [
+            "MMFCUPCBOL",
+            "FOXMEBGTDJ",
+            "GMNUAKPCFC",
+            "OFVPGPXQMO",
+            "RWVMVWHXCP",
+            "QTNEAMRVQN",
+            "FCUPVDGZTI",
+            "UNLUFHXXYG",
+            "VQMUSHVYYD"
+        ],
+        "tags": [
+            {
+                "id": 39351,
+                "name": "USRXCYHSF"
+            },
+            {
+                "id": 486990,
+                "name": "UVJQTIBGF"
+            },
+            {
+                "id": 395123,
+                "name": "DSLXFHWY"
+            },
+            {
+                "id": 743225,
+                "name": "YUOPXSPR"
+            },
+            {
+                "id": 113698,
+                "name": "SPQQFLSLD"
+            },
+            {
+                "id": 268171,
+                "name": "HZCEEZG"
+            }
+        ],
+        "status": "sold"
+    },
+    {
+        "id": 9223372036854020363,
+        "category": {
+            "id": -65121427,
+            "name": "incididunt pariatur"
+        },
+        "name": "doggie",
+        "photoUrls": [
+            "aliquip eu est",
+            "veniam non magna aliquip eu"
+        ],
+        "tags": [
+            {
+                "id": 31660939,
+                "name": "velit Ut non"
+            },
+            {
+                "id": -57955004,
+                "name": "proident"
+            }
+        ],
+        "status": "sold"
+    },
+    {
+        "id": 9223372036854020365,
+        "category": {
+            "id": -65121427,
+            "name": "incididunt pariatur"
+        },
+        "name": "rocky",
+        "photoUrls": [
+            "aliquip eu est",
+            "veniam non magna aliquip eu"
+        ],
+        "tags": [
+            {
+                "id": 31660939,
+                "name": "velit Ut non"
+            },
+            {
+                "id": -57955004,
+                "name": "proident"
+            }
+        ],
+        "status": "sold"
+    },
+    {
+        "id": 57877452,
+        "category": {
+            "id": 6221170,
+            "name": "tempor dolor fugiat reprehenderit"
+        },
+        "name": "doggie",
+        "photoUrls": [
+            "ut consectetur et",
+            "cillum Lorem Ut pariatur"
+        ],
+        "tags": [
+            {
+                "id": -38584091,
+                "name": "Duis"
+            },
+            {
+                "id": 23287825,
+                "name": "aliqua Lorem"
+            }
+        ],
+        "status": "sold"
+    },
+    {
+        "id": 9223372036854020475,
+        "category": {
+            "id": -65121427,
+            "name": "incididunt pariatur"
+        },
+        "name": "rocky",
+        "photoUrls": [
+            "aliquip eu est",
+            "veniam non magna aliquip eu"
+        ],
+        "tags": [
+            {
+                "id": 31660939,
+                "name": "velit Ut non"
+            },
+            {
+                "id": -57955004,
+                "name": "proident"
+            }
+        ],
+        "status": "sold"
+    },
+    {
+        "id": 9223372036854020501,
+        "category": {
+            "id": -65121427,
+            "name": "incididunt pariatur"
+        },
+        "name": "rocky",
+        "photoUrls": [
+            "aliquip eu est",
+            "veniam non magna aliquip eu"
+        ],
+        "tags": [
+            {
+                "id": 31660939,
+                "name": "velit Ut non"
+            },
+            {
+                "id": -57955004,
+                "name": "proident"
+            },
+            {
+                "id": -57955006,
+                "name": "Rocky"
+            }
+        ],
+        "status": "sold"
+    },
+    {
+        "id": 1234,
+        "category": {
+            "id": 5632,
+            "name": "string"
+        },
+        "name": "my test pet",
+        "photoUrls": [
+            "string"
+        ],
+        "tags": [],
+        "status": "sold"
+    },
+    {
+        "id": 9,
+        "category": {
+            "id": 0,
+            "name": "cats"
+        },
+        "photoUrls": [
+            "string"
+        ],
+        "tags": [
+            {
+                "id": 0,
+                "name": "string"
+            }
+        ],
+        "status": "sold"
+    },
+    {
+        "id": 1,
+        "category": {
+            "id": 1,
+            "name": "animal"
+        },
+        "name": "dog",
+        "photoUrls": [
+            "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/golden-retriever-royalty-free-image-506756303-1560962726.jpg"
+        ],
+        "tags": [
+            {
+                "id": 1,
+                "name": "husky"
+            }
+        ],
+        "status": "sold"
+    },
+    {
+        "id": 11,
+        "name": "mango",
+        "photoUrls": [],
+        "tags": [
+            {
+                "id": 11,
+                "name": "teroSr"
+            }
+        ],
+        "status": "sold"
+    },
+    {
+        "id": 234,
+        "category": {
+            "id": 234,
+            "name": "joe"
+        },
+        "name": "joe",
+        "photoUrls": [
+            "officia proide",
+            "qui in"
+        ],
+        "tags": [
+            {
+                "id": 234,
+                "name": "root"
+            },
+            {
+                "id": 234,
+                "name": "root"
+            }
+        ],
+        "status": "sold"
+    },
+    {
+        "id": 1375,
+        "category": {
+            "id": 101,
+            "name": "testcategory"
+        },
+        "name": "valueimplcat",
+        "photoUrls": [
+            "a.png",
+            "b.png"
+        ],
+        "tags": [
+            {
+                "id": 102,
+                "name": "testtag1"
+            },
+            {
+                "id": 103,
+                "name": "testtag2"
+            }
+        ],
+        "status": "sold"
+    },
+    {
+        "id": 49473399,
+        "category": {
+            "id": 59917128,
+            "name": "reprehenderit ea"
+        },
+        "name": "doggie",
+        "photoUrls": [
+            "velit exercitation est id",
+            "pariatur Ut"
+        ],
+        "tags": [
+            {
+                "id": -99305302,
+                "name": "officia irure cill"
+            },
+            {
+                "id": 63825189,
+                "name": "eu irure sed"
+            }
+        ],
+        "status": "sold"
+    },
+    {
+        "id": 42,
+        "category": {
+            "id": 0,
+            "name": "string"
+        },
+        "name": "mongo",
+        "photoUrls": [
+            "string"
+        ],
+        "tags": [
+            {
+                "id": 0,
+                "name": "string"
+            }
+        ],
+        "status": "sold"
+    },
+    {
+        "id": 934251923,
+        "category": {
+            "id": 549405499,
+            "name": "dHGcBwTEl"
+        },
+        "name": "KKeBydDPKqgE",
+        "photoUrls": [
+            "KLSalQbXanAJ"
+        ],
+        "tags": [
+            {
+                "id": 1972342410,
+                "name": "XRmDXIx"
+            }
+        ],
+        "status": "sold"
+    },
+    {
+        "id": 9223372036854018112,
+        "category": {
+            "id": 0,
+            "name": "string"
+        },
+        "name": "My best dog",
+        "photoUrls": [
+            "string"
+        ],
+        "tags": [
+            {
+                "id": 0,
+                "name": "string"
+            }
+        ],
+        "status": "sold"
+    }
+]</msg>
+<status status="PASS" starttime="20220712 16:49:40.647" endtime="20220712 16:49:40.647"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${requestInfo.responseHeaders}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220712 16:49:40.651" level="INFO">{
+    "Date": "Tue, 12 Jul 2022 11:19:39 GMT",
+    "Content-Type": "application/json",
+    "Transfer-Encoding": "chunked",
+    "Connection": "keep-alive",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Methods": "GET, POST, DELETE, PUT",
+    "Access-Control-Allow-Headers": "Content-Type, api_key, Authorization",
+    "Server": "Jetty(9.2.9.v20150224)"
+}</msg>
+<status status="PASS" starttime="20220712 16:49:40.651" endtime="20220712 16:49:40.651"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${requestInfo.responseStatusCode}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220712 16:49:40.651" level="INFO">200</msg>
+<status status="PASS" starttime="20220712 16:49:40.651" endtime="20220712 16:49:40.651"/>
+</kw>
+<status status="PASS" starttime="20220712 16:49:39.427" endtime="20220712 16:49:40.651"/>
+</kw>
+<msg timestamp="20220712 16:49:40.651" level="INFO">${requestInfo} = &lt;Framework.RequestInfo.RequestInfo object at 0x000001D70790B648&gt;</msg>
+<kw name="Validate Response Against Baselines" library="BaselineValidator">
+<arg>${requestInfo}</arg>
+<kw name="Validate Status Code" library="BaselineValidator">
+<arg>${requestInfo}</arg>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>200</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20220712 16:49:40.655" endtime="20220712 16:49:40.659"/>
+</kw>
+<status status="PASS" starttime="20220712 16:49:40.655" endtime="20220712 16:49:40.659"/>
+</kw>
+<status status="PASS" starttime="20220712 16:49:40.655" endtime="20220712 16:49:40.659"/>
+</kw>
+<msg timestamp="20220712 16:49:40.659" level="INFO">${requestInfo} = &lt;Framework.RequestInfo.RequestInfo object at 0x000001D70790B648&gt;</msg>
+<msg timestamp="20220712 16:49:40.659" level="INFO">${requestInfo} = &lt;Framework.RequestInfo.RequestInfo object at 0x000001D70790B648&gt;</msg>
+<status status="PASS" starttime="20220712 16:49:39.421" endtime="20220712 16:49:40.659"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${requestInfo.responseBody}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220712 16:49:40.659" level="INFO">[
+    {
+        "id": 813855,
+        "category": {
+            "id": 268410,
+            "name": "HMJTJYZBF"
+        },
+        "name": "DPVMZNUDL",
+        "photoUrls": [
+            "ZFDMLD",
+            "YHKAOM"
+        ],
+        "tags": [
+            {
+                "id": 879644,
+                "name": "VEDVOI"
+            },
+            {
+                "id": 362085,
+                "name": "UWDCUGFXM"
+            },
+            {
+                "id": 232686,
+                "name": "BDQKJQL"
+            },
+            {
+                "id": 279271,
+                "name": "CVFHADCQAP"
+            },
+            {
+                "id": 659566,
+                "name": "BFSVMDHAEE"
+            },
+            {
+                "id": 451183,
+                "name": "NRNYCPNDN"
+            }
+        ],
+        "status": "sold"
+    },
+    {
+        "id": 304038,
+        "category": {
+            "id": 888614,
+            "name": "ODNMS"
+        },
+        "name": "YGQOICXES",
+        "photoUrls": [
+            "RVYVOT",
+            "BDESLW",
+            "JCVYZH"
+        ],
+        "tags": [
+            {
+                "id": 956358,
+                "name": "CPAPFXJUO"
+            },
+            {
+                "id": 584831,
+                "name": "NRXZQMDN"
+            },
+            {
+                "id": 955235,
+                "name": "PEKYVQHSAQ"
+            },
+            {
+                "id": 673746,
+                "name": "CKWCLCTVAD"
+            }
+        ],
+        "status": "sold"
+    },
+    {
+        "id": 1327,
+        "category": {
+            "id": 101,
+            "name": "testcategory"
+        },
+        "name": "valueimplcat",
+        "photoUrls": [
+            "a.png",
+            "b.png"
+        ],
+        "tags": [
+            {
+                "id": 102,
+                "name": "testtag1"
+            },
+            {
+                "id": 103,
+                "name": "testtag2"
+            }
+        ],
+        "status": "sold"
+    },
+    {
+        "id": 1567,
+        "category": {
+            "id": 101,
+            "name": "testcategory"
+        },
+        "name": "valueimplcat",
+        "photoUrls": [
+            "a.png",
+            "b.png"
+        ],
+        "tags": [
+            {
+                "id": 102,
+                "name": "testtag1"
+            },
+            {
+                "id": 103,
+                "name": "testtag2"
+            }
+        ],
+        "status": "sold"
+    },
+    {
+        "id": 9223372036854020270,
+        "name": "Marinus670",
+        "photoUrls": [],
+        "tags": [],
+        "status": "sold"
+    },
+    {
+        "id": 963395,
+        "category": {
+            "id": 941362,
+            "name": "UVNLNJVVTS"
+        },
+        "name": "RKPOQXHU",
+        "photoUrls": [
+            "MMFCUPCBOL",
+            "FOXMEBGTDJ",
+            "GMNUAKPCFC",
+            "OFVPGPXQMO",
+            "RWVMVWHXCP",
+            "QTNEAMRVQN",
+            "FCUPVDGZTI",
+            "UNLUFHXXYG",
+            "VQMUSHVYYD"
+        ],
+        "tags": [
+            {
+                "id": 39351,
+                "name": "USRXCYHSF"
+            },
+            {
+                "id": 486990,
+                "name": "UVJQTIBGF"
+            },
+            {
+                "id": 395123,
+                "name": "DSLXFHWY"
+            },
+            {
+                "id": 743225,
+                "name": "YUOPXSPR"
+            },
+            {
+                "id": 113698,
+                "name": "SPQQFLSLD"
+            },
+            {
+                "id": 268171,
+                "name": "HZCEEZG"
+            }
+        ],
+        "status": "sold"
+    },
+    {
+        "id": 9223372036854020363,
+        "category": {
+            "id": -65121427,
+            "name": "incididunt pariatur"
+        },
+        "name": "doggie",
+        "photoUrls": [
+            "aliquip eu est",
+            "veniam non magna aliquip eu"
+        ],
+        "tags": [
+            {
+                "id": 31660939,
+                "name": "velit Ut non"
+            },
+            {
+                "id": -57955004,
+                "name": "proident"
+            }
+        ],
+        "status": "sold"
+    },
+    {
+        "id": 9223372036854020365,
+        "category": {
+            "id": -65121427,
+            "name": "incididunt pariatur"
+        },
+        "name": "rocky",
+        "photoUrls": [
+            "aliquip eu est",
+            "veniam non magna aliquip eu"
+        ],
+        "tags": [
+            {
+                "id": 31660939,
+                "name": "velit Ut non"
+            },
+            {
+                "id": -57955004,
+                "name": "proident"
+            }
+        ],
+        "status": "sold"
+    },
+    {
+        "id": 57877452,
+        "category": {
+            "id": 6221170,
+            "name": "tempor dolor fugiat reprehenderit"
+        },
+        "name": "doggie",
+        "photoUrls": [
+            "ut consectetur et",
+            "cillum Lorem Ut pariatur"
+        ],
+        "tags": [
+            {
+                "id": -38584091,
+                "name": "Duis"
+            },
+            {
+                "id": 23287825,
+                "name": "aliqua Lorem"
+            }
+        ],
+        "status": "sold"
+    },
+    {
+        "id": 9223372036854020475,
+        "category": {
+            "id": -65121427,
+            "name": "incididunt pariatur"
+        },
+        "name": "rocky",
+        "photoUrls": [
+            "aliquip eu est",
+            "veniam non magna aliquip eu"
+        ],
+        "tags": [
+            {
+                "id": 31660939,
+                "name": "velit Ut non"
+            },
+            {
+                "id": -57955004,
+                "name": "proident"
+            }
+        ],
+        "status": "sold"
+    },
+    {
+        "id": 9223372036854020501,
+        "category": {
+            "id": -65121427,
+            "name": "incididunt pariatur"
+        },
+        "name": "rocky",
+        "photoUrls": [
+            "aliquip eu est",
+            "veniam non magna aliquip eu"
+        ],
+        "tags": [
+            {
+                "id": 31660939,
+                "name": "velit Ut non"
+            },
+            {
+                "id": -57955004,
+                "name": "proident"
+            },
+            {
+                "id": -57955006,
+                "name": "Rocky"
+            }
+        ],
+        "status": "sold"
+    },
+    {
+        "id": 1234,
+        "category": {
+            "id": 5632,
+            "name": "string"
+        },
+        "name": "my test pet",
+        "photoUrls": [
+            "string"
+        ],
+        "tags": [],
+        "status": "sold"
+    },
+    {
+        "id": 9,
+        "category": {
+            "id": 0,
+            "name": "cats"
+        },
+        "photoUrls": [
+            "string"
+        ],
+        "tags": [
+            {
+                "id": 0,
+                "name": "string"
+            }
+        ],
+        "status": "sold"
+    },
+    {
+        "id": 1,
+        "category": {
+            "id": 1,
+            "name": "animal"
+        },
+        "name": "dog",
+        "photoUrls": [
+            "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/golden-retriever-royalty-free-image-506756303-1560962726.jpg"
+        ],
+        "tags": [
+            {
+                "id": 1,
+                "name": "husky"
+            }
+        ],
+        "status": "sold"
+    },
+    {
+        "id": 11,
+        "name": "mango",
+        "photoUrls": [],
+        "tags": [
+            {
+                "id": 11,
+                "name": "teroSr"
+            }
+        ],
+        "status": "sold"
+    },
+    {
+        "id": 234,
+        "category": {
+            "id": 234,
+            "name": "joe"
+        },
+        "name": "joe",
+        "photoUrls": [
+            "officia proide",
+            "qui in"
+        ],
+        "tags": [
+            {
+                "id": 234,
+                "name": "root"
+            },
+            {
+                "id": 234,
+                "name": "root"
+            }
+        ],
+        "status": "sold"
+    },
+    {
+        "id": 1375,
+        "category": {
+            "id": 101,
+            "name": "testcategory"
+        },
+        "name": "valueimplcat",
+        "photoUrls": [
+            "a.png",
+            "b.png"
+        ],
+        "tags": [
+            {
+                "id": 102,
+                "name": "testtag1"
+            },
+            {
+                "id": 103,
+                "name": "testtag2"
+            }
+        ],
+        "status": "sold"
+    },
+    {
+        "id": 49473399,
+        "category": {
+            "id": 59917128,
+            "name": "reprehenderit ea"
+        },
+        "name": "doggie",
+        "photoUrls": [
+            "velit exercitation est id",
+            "pariatur Ut"
+        ],
+        "tags": [
+            {
+                "id": -99305302,
+                "name": "officia irure cill"
+            },
+            {
+                "id": 63825189,
+                "name": "eu irure sed"
+            }
+        ],
+        "status": "sold"
+    },
+    {
+        "id": 42,
+        "category": {
+            "id": 0,
+            "name": "string"
+        },
+        "name": "mongo",
+        "photoUrls": [
+            "string"
+        ],
+        "tags": [
+            {
+                "id": 0,
+                "name": "string"
+            }
+        ],
+        "status": "sold"
+    },
+    {
+        "id": 934251923,
+        "category": {
+            "id": 549405499,
+            "name": "dHGcBwTEl"
+        },
+        "name": "KKeBydDPKqgE",
+        "photoUrls": [
+            "KLSalQbXanAJ"
+        ],
+        "tags": [
+            {
+                "id": 1972342410,
+                "name": "XRmDXIx"
+            }
+        ],
+        "status": "sold"
+    },
+    {
+        "id": 9223372036854018112,
+        "category": {
+            "id": 0,
+            "name": "string"
+        },
+        "name": "My best dog",
+        "photoUrls": [
+            "string"
+        ],
+        "tags": [
+            {
+                "id": 0,
+                "name": "string"
+            }
+        ],
+        "status": "sold"
+    }
+]</msg>
+<status status="PASS" starttime="20220712 16:49:40.659" endtime="20220712 16:49:40.659"/>
+</kw>
+<kw name="Extract JSON Value" library="JSONExtractor">
+<var>${pet status}</var>
+<arg>${requestInfo.responseBody}</arg>
+<arg>$[?(@.id == 1)].status</arg>
+<msg timestamp="20220712 16:49:40.727" level="INFO">jsonPath $[?(@.id == 1)].status</msg>
+<msg timestamp="20220712 16:49:40.727" level="INFO">${pet status} = sold</msg>
+<status status="PASS" starttime="20220712 16:49:40.659" endtime="20220712 16:49:40.727"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${pet status}</arg>
+<arg>sold</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20220712 16:49:40.731" endtime="20220712 16:49:40.731"/>
+</kw>
+<tag>demo</tag>
+<tag>dev</tag>
+<tag>poc</tag>
+<status status="PASS" starttime="20220712 16:49:39.421" endtime="20220712 16:49:40.731"/>
+</test>
+<status status="PASS" starttime="20220712 16:49:36.024" endtime="20220712 16:49:40.731"/>
+</suite>
+<suite id="s1-s2" name="PetStore Users" source="C:\API Automation\Robot\github\Automation-Performance\API_Automation\PetStore_Users.robot">
+<test id="s1-s2-t1" name="Create multiple users with array">
+<kw name="Make REST Request" library="RESTLibrary">
+<arg>Create Multiple Users</arg>
+<arg>https://petstore.swagger.io/v2/user/createWithArray</arg>
+<arg>method=POST</arg>
+<arg>requestHeaders={'Content-Type': 'application/json', 'Accept' : 'application/json'}</arg>
+<arg>requestBody=${EXECDIR}/Inputs/createUsers.json</arg>
+<arg>expectedStatusCode=200</arg>
+<arg>expectedResponseBody=${EXECDIR}/Baselines/createUsersBaseline.json</arg>
+<msg timestamp="20220712 16:49:40.743" level="INFO">${requestInfo} = &lt;Framework.RequestInfo.RequestInfo object at 0x000001D70848EB88&gt;</msg>
+<kw name="Generate REST Request" library="InputGenerator">
+<arg>${requestInfo}</arg>
+<kw name="Generate URL" library="InputGenerator">
+<arg>${requestInfo}</arg>
+<kw name="Log" library="BuiltIn">
+<arg>${requestInfo.url}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220712 16:49:40.743" level="INFO">https://petstore.swagger.io/v2/user/createWithArray</msg>
+<status status="PASS" starttime="20220712 16:49:40.743" endtime="20220712 16:49:40.743"/>
+</kw>
+<status status="PASS" starttime="20220712 16:49:40.743" endtime="20220712 16:49:40.743"/>
+</kw>
+<kw name="Generate Request Headers" library="InputGenerator">
+<arg>${requestInfo}</arg>
+<kw name="Log" library="BuiltIn">
+<arg>${requestInfo.requestHeaders}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220712 16:49:40.747" level="INFO">{'Content-Type': 'application/json', 'Accept': 'application/json'}</msg>
+<status status="PASS" starttime="20220712 16:49:40.747" endtime="20220712 16:49:40.747"/>
+</kw>
+<status status="PASS" starttime="20220712 16:49:40.747" endtime="20220712 16:49:40.747"/>
+</kw>
+<kw name="Generate Request Body" library="InputGenerator">
+<arg>${requestInfo}</arg>
+<kw name="Log" library="BuiltIn">
+<arg>${requestInfo.requestBody}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220712 16:49:40.747" level="INFO">[
+  {
+    "id": 0,
+    "username": "deepak.chourasia",
+    "firstName": "deepak",
+    "lastName": "chourasia",
+    "email": "deepak.chourasia@gmail.com",
+    "password": "Password1",
+    "phone": "1234567890",
+    "userStatus": 0
+  },
+  {
+    "id": 1,
+    "username": "chourasia.deepak",
+    "firstName": "deepak",
+    "lastName": "chourasia",
+    "email": "deepak.chourasia@gmail.com",
+    "password": "Password1",
+    "phone": "1234567890",
+    "userStatus": 0
+  }
+]</msg>
+<status status="PASS" starttime="20220712 16:49:40.747" endtime="20220712 16:49:40.747"/>
+</kw>
+<status status="PASS" starttime="20220712 16:49:40.747" endtime="20220712 16:49:40.747"/>
+</kw>
+<status status="PASS" starttime="20220712 16:49:40.743" endtime="20220712 16:49:40.747"/>
+</kw>
+<msg timestamp="20220712 16:49:40.747" level="INFO">${requestInfo} = &lt;Framework.RequestInfo.RequestInfo object at 0x000001D70848EB88&gt;</msg>
+<kw name="Process REST Request" library="RequestProcessor">
+<arg>${requestInfo}</arg>
+<kw name="Log" library="BuiltIn">
+<arg>${requestInfo.responseBody}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220712 16:49:41.774" level="INFO">{
+    "code": 200,
+    "type": "unknown",
+    "message": "ok"
+}</msg>
+<status status="PASS" starttime="20220712 16:49:41.774" endtime="20220712 16:49:41.774"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${requestInfo.responseHeaders}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220712 16:49:41.774" level="INFO">{
+    "Date": "Tue, 12 Jul 2022 11:19:40 GMT",
+    "Content-Type": "application/json",
+    "Transfer-Encoding": "chunked",
+    "Connection": "keep-alive",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Methods": "GET, POST, DELETE, PUT",
+    "Access-Control-Allow-Headers": "Content-Type, api_key, Authorization",
+    "Server": "Jetty(9.2.9.v20150224)"
+}</msg>
+<status status="PASS" starttime="20220712 16:49:41.774" endtime="20220712 16:49:41.774"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${requestInfo.responseStatusCode}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220712 16:49:41.774" level="INFO">200</msg>
+<status status="PASS" starttime="20220712 16:49:41.774" endtime="20220712 16:49:41.778"/>
+</kw>
+<status status="PASS" starttime="20220712 16:49:40.751" endtime="20220712 16:49:41.778"/>
+</kw>
+<msg timestamp="20220712 16:49:41.778" level="INFO">${requestInfo} = &lt;Framework.RequestInfo.RequestInfo object at 0x000001D70848EB88&gt;</msg>
+<kw name="Validate Response Against Baselines" library="BaselineValidator">
+<arg>${requestInfo}</arg>
+<kw name="Validate Response Body" library="BaselineValidator">
+<arg>${requestInfo}</arg>
+<kw name="Log" library="BuiltIn">
+<arg>${requestInfo.expectedResponseBody}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220712 16:49:41.782" level="INFO">{
+    "code": 200,
+    "type": "unknown",
+    "message": "ok"
+}</msg>
+<status status="PASS" starttime="20220712 16:49:41.778" endtime="20220712 16:49:41.782"/>
+</kw>
+<status status="PASS" starttime="20220712 16:49:41.778" endtime="20220712 16:49:41.782"/>
+</kw>
+<kw name="Validate Status Code" library="BaselineValidator">
+<arg>${requestInfo}</arg>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>200</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20220712 16:49:41.782" endtime="20220712 16:49:41.782"/>
+</kw>
+<status status="PASS" starttime="20220712 16:49:41.782" endtime="20220712 16:49:41.782"/>
+</kw>
+<status status="PASS" starttime="20220712 16:49:41.778" endtime="20220712 16:49:41.782"/>
+</kw>
+<msg timestamp="20220712 16:49:41.782" level="INFO">${requestInfo} = &lt;Framework.RequestInfo.RequestInfo object at 0x000001D70848EB88&gt;</msg>
+<status status="PASS" starttime="20220712 16:49:40.743" endtime="20220712 16:49:41.782"/>
+</kw>
+<tag>demo</tag>
+<tag>dev</tag>
+<tag>poc</tag>
+<status status="PASS" starttime="20220712 16:49:40.739" endtime="20220712 16:49:41.784"/>
+</test>
+<test id="s1-s2-t2" name="Update a user's username and other details">
+<kw name="Make REST Request" library="RESTLibrary">
+<arg>Update User</arg>
+<arg>https://petstore.swagger.io/v2/user/deepak.chourasia</arg>
+<arg>method=PUT</arg>
+<arg>requestHeaders={'Content-Type': 'application/json', 'Accept' : 'application/json'}</arg>
+<arg>requestBody=${EXECDIR}/Inputs/updateUser.json</arg>
+<arg>expectedStatusCode=200</arg>
+<arg>expectedResponseBody=${EXECDIR}/Baselines/updateUserBaseline.json</arg>
+<msg timestamp="20220712 16:49:41.785" level="INFO">${requestInfo} = &lt;Framework.RequestInfo.RequestInfo object at 0x000001D708434708&gt;</msg>
+<kw name="Generate REST Request" library="InputGenerator">
+<arg>${requestInfo}</arg>
+<kw name="Generate URL" library="InputGenerator">
+<arg>${requestInfo}</arg>
+<kw name="Log" library="BuiltIn">
+<arg>${requestInfo.url}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220712 16:49:41.789" level="INFO">https://petstore.swagger.io/v2/user/deepak.chourasia</msg>
+<status status="PASS" starttime="20220712 16:49:41.789" endtime="20220712 16:49:41.789"/>
+</kw>
+<status status="PASS" starttime="20220712 16:49:41.789" endtime="20220712 16:49:41.789"/>
+</kw>
+<kw name="Generate Request Headers" library="InputGenerator">
+<arg>${requestInfo}</arg>
+<kw name="Log" library="BuiltIn">
+<arg>${requestInfo.requestHeaders}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220712 16:49:41.789" level="INFO">{'Content-Type': 'application/json', 'Accept': 'application/json'}</msg>
+<status status="PASS" starttime="20220712 16:49:41.789" endtime="20220712 16:49:41.789"/>
+</kw>
+<status status="PASS" starttime="20220712 16:49:41.789" endtime="20220712 16:49:41.789"/>
+</kw>
+<kw name="Generate Request Body" library="InputGenerator">
+<arg>${requestInfo}</arg>
+<kw name="Log" library="BuiltIn">
+<arg>${requestInfo.requestBody}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220712 16:49:41.793" level="INFO">{
+  "id": 1,
+  "username": "deepak.chourasia.modified",
+  "firstName": "deepak.modified",
+  "lastName": "chourasia.modified",
+  "email": "deepak.chourasia.modified@gmail.com",
+  "password": "Password1.modified",
+  "phone": "1234567891",
+  "userStatus": 0
+}</msg>
+<status status="PASS" starttime="20220712 16:49:41.789" endtime="20220712 16:49:41.793"/>
+</kw>
+<status status="PASS" starttime="20220712 16:49:41.789" endtime="20220712 16:49:41.793"/>
+</kw>
+<status status="PASS" starttime="20220712 16:49:41.785" endtime="20220712 16:49:41.793"/>
+</kw>
+<msg timestamp="20220712 16:49:41.793" level="INFO">${requestInfo} = &lt;Framework.RequestInfo.RequestInfo object at 0x000001D708434708&gt;</msg>
+<kw name="Process REST Request" library="RequestProcessor">
+<arg>${requestInfo}</arg>
+<kw name="Log" library="BuiltIn">
+<arg>${requestInfo.responseBody}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220712 16:49:43.007" level="INFO">{
+    "code": 200,
+    "type": "unknown",
+    "message": "1"
+}</msg>
+<status status="PASS" starttime="20220712 16:49:43.003" endtime="20220712 16:49:43.007"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${requestInfo.responseHeaders}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220712 16:49:43.007" level="INFO">{
+    "Date": "Tue, 12 Jul 2022 11:19:41 GMT",
+    "Content-Type": "application/json",
+    "Transfer-Encoding": "chunked",
+    "Connection": "keep-alive",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Methods": "GET, POST, DELETE, PUT",
+    "Access-Control-Allow-Headers": "Content-Type, api_key, Authorization",
+    "Server": "Jetty(9.2.9.v20150224)"
+}</msg>
+<status status="PASS" starttime="20220712 16:49:43.007" endtime="20220712 16:49:43.007"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${requestInfo.responseStatusCode}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220712 16:49:43.007" level="INFO">200</msg>
+<status status="PASS" starttime="20220712 16:49:43.007" endtime="20220712 16:49:43.007"/>
+</kw>
+<status status="PASS" starttime="20220712 16:49:41.793" endtime="20220712 16:49:43.007"/>
+</kw>
+<msg timestamp="20220712 16:49:43.007" level="INFO">${requestInfo} = &lt;Framework.RequestInfo.RequestInfo object at 0x000001D708434708&gt;</msg>
+<kw name="Validate Response Against Baselines" library="BaselineValidator">
+<arg>${requestInfo}</arg>
+<kw name="Validate Response Body" library="BaselineValidator">
+<arg>${requestInfo}</arg>
+<kw name="Log" library="BuiltIn">
+<arg>${requestInfo.expectedResponseBody}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220712 16:49:43.016" level="INFO">{
+    "code": 200,
+    "type": "unknown",
+    "message": "1"
+}</msg>
+<status status="PASS" starttime="20220712 16:49:43.012" endtime="20220712 16:49:43.016"/>
+</kw>
+<status status="PASS" starttime="20220712 16:49:43.012" endtime="20220712 16:49:43.016"/>
+</kw>
+<kw name="Validate Status Code" library="BaselineValidator">
+<arg>${requestInfo}</arg>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>200</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20220712 16:49:43.016" endtime="20220712 16:49:43.016"/>
+</kw>
+<status status="PASS" starttime="20220712 16:49:43.016" endtime="20220712 16:49:43.016"/>
+</kw>
+<status status="PASS" starttime="20220712 16:49:43.012" endtime="20220712 16:49:43.016"/>
+</kw>
+<msg timestamp="20220712 16:49:43.016" level="INFO">${requestInfo} = &lt;Framework.RequestInfo.RequestInfo object at 0x000001D708434708&gt;</msg>
+<status status="PASS" starttime="20220712 16:49:41.785" endtime="20220712 16:49:43.016"/>
+</kw>
+<tag>demo</tag>
+<tag>dev</tag>
+<tag>poc</tag>
+<status status="PASS" starttime="20220712 16:49:41.785" endtime="20220712 16:49:43.016"/>
+</test>
+<test id="s1-s2-t3" name="Get user by the updated username">
+<kw name="Make REST Request" library="RESTLibrary">
+<arg>Get User</arg>
+<arg>https://petstore.swagger.io/v2/user/deepak.chourasia.modified</arg>
+<arg>method=GET</arg>
+<arg>requestHeaders={'Accept' : 'application/json'}</arg>
+<arg>expectedStatusCode=200</arg>
+<arg>expectedResponseBody=${EXECDIR}/Baselines/getUserBaseline.json</arg>
+<msg timestamp="20220712 16:49:43.019" level="INFO">${requestInfo} = &lt;Framework.RequestInfo.RequestInfo object at 0x000001D7084941C8&gt;</msg>
+<kw name="Generate REST Request" library="InputGenerator">
+<arg>${requestInfo}</arg>
+<kw name="Generate URL" library="InputGenerator">
+<arg>${requestInfo}</arg>
+<kw name="Log" library="BuiltIn">
+<arg>${requestInfo.url}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220712 16:49:43.024" level="INFO">https://petstore.swagger.io/v2/user/deepak.chourasia.modified</msg>
+<status status="PASS" starttime="20220712 16:49:43.019" endtime="20220712 16:49:43.024"/>
+</kw>
+<status status="PASS" starttime="20220712 16:49:43.019" endtime="20220712 16:49:43.024"/>
+</kw>
+<kw name="Generate Request Headers" library="InputGenerator">
+<arg>${requestInfo}</arg>
+<kw name="Log" library="BuiltIn">
+<arg>${requestInfo.requestHeaders}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220712 16:49:43.024" level="INFO">{'Accept': 'application/json'}</msg>
+<status status="PASS" starttime="20220712 16:49:43.024" endtime="20220712 16:49:43.024"/>
+</kw>
+<status status="PASS" starttime="20220712 16:49:43.024" endtime="20220712 16:49:43.024"/>
+</kw>
+<status status="PASS" starttime="20220712 16:49:43.019" endtime="20220712 16:49:43.024"/>
+</kw>
+<msg timestamp="20220712 16:49:43.024" level="INFO">${requestInfo} = &lt;Framework.RequestInfo.RequestInfo object at 0x000001D7084941C8&gt;</msg>
+<kw name="Process REST Request" library="RequestProcessor">
+<arg>${requestInfo}</arg>
+<kw name="Log" library="BuiltIn">
+<arg>${requestInfo.responseBody}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220712 16:49:44.162" level="INFO">{
+    "id": 1,
+    "username": "deepak.chourasia.modified",
+    "firstName": "deepak.modified",
+    "lastName": "chourasia.modified",
+    "email": "deepak.chourasia.modified@gmail.com",
+    "password": "Password1.modified",
+    "phone": "1234567891",
+    "userStatus": 0
+}</msg>
+<status status="PASS" starttime="20220712 16:49:44.162" endtime="20220712 16:49:44.162"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${requestInfo.responseHeaders}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220712 16:49:44.166" level="INFO">{
+    "Date": "Tue, 12 Jul 2022 11:19:42 GMT",
+    "Content-Type": "application/json",
+    "Transfer-Encoding": "chunked",
+    "Connection": "keep-alive",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Methods": "GET, POST, DELETE, PUT",
+    "Access-Control-Allow-Headers": "Content-Type, api_key, Authorization",
+    "Server": "Jetty(9.2.9.v20150224)"
+}</msg>
+<status status="PASS" starttime="20220712 16:49:44.166" endtime="20220712 16:49:44.166"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${requestInfo.responseStatusCode}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220712 16:49:44.170" level="INFO">200</msg>
+<status status="PASS" starttime="20220712 16:49:44.166" endtime="20220712 16:49:44.170"/>
+</kw>
+<status status="PASS" starttime="20220712 16:49:43.024" endtime="20220712 16:49:44.170"/>
+</kw>
+<msg timestamp="20220712 16:49:44.170" level="INFO">${requestInfo} = &lt;Framework.RequestInfo.RequestInfo object at 0x000001D7084941C8&gt;</msg>
+<kw name="Validate Response Against Baselines" library="BaselineValidator">
+<arg>${requestInfo}</arg>
+<kw name="Validate Response Body" library="BaselineValidator">
+<arg>${requestInfo}</arg>
+<kw name="Log" library="BuiltIn">
+<arg>${requestInfo.expectedResponseBody}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220712 16:49:44.178" level="INFO">{
+    "id": 1,
+    "username": "deepak.chourasia.modified",
+    "firstName": "deepak.modified",
+    "lastName": "chourasia.modified",
+    "email": "deepak.chourasia.modified@gmail.com",
+    "password": "Password1.modified",
+    "phone": "1234567891",
+    "userStatus": 0
+}</msg>
+<status status="PASS" starttime="20220712 16:49:44.174" endtime="20220712 16:49:44.178"/>
+</kw>
+<status status="PASS" starttime="20220712 16:49:44.174" endtime="20220712 16:49:44.178"/>
+</kw>
+<kw name="Validate Status Code" library="BaselineValidator">
+<arg>${requestInfo}</arg>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>200</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20220712 16:49:44.178" endtime="20220712 16:49:44.178"/>
+</kw>
+<status status="PASS" starttime="20220712 16:49:44.178" endtime="20220712 16:49:44.178"/>
+</kw>
+<status status="PASS" starttime="20220712 16:49:44.174" endtime="20220712 16:49:44.178"/>
+</kw>
+<msg timestamp="20220712 16:49:44.178" level="INFO">${requestInfo} = &lt;Framework.RequestInfo.RequestInfo object at 0x000001D7084941C8&gt;</msg>
+<status status="PASS" starttime="20220712 16:49:43.019" endtime="20220712 16:49:44.178"/>
+</kw>
+<tag>demo</tag>
+<tag>dev</tag>
+<tag>poc</tag>
+<status status="PASS" starttime="20220712 16:49:43.019" endtime="20220712 16:49:44.178"/>
+</test>
+<status status="PASS" starttime="20220712 16:49:40.735" endtime="20220712 16:49:44.178"/>
+</suite>
+<status status="PASS" starttime="20220712 16:49:36.000" endtime="20220712 16:49:44.182"/>
+</suite>
+<statistics>
+<total>
+<stat pass="6" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="6" fail="0" skip="0">demo</stat>
+<stat pass="6" fail="0" skip="0">dev</stat>
+<stat pass="6" fail="0" skip="0">poc</stat>
+</tag>
+<suite>
+<stat pass="6" fail="0" skip="0" id="s1" name="PetStore Pets &amp; PetStore Users">PetStore Pets &amp; PetStore Users</stat>
+<stat pass="3" fail="0" skip="0" id="s1-s1" name="PetStore Pets">PetStore Pets &amp; PetStore Users.PetStore Pets</stat>
+<stat pass="3" fail="0" skip="0" id="s1-s2" name="PetStore Users">PetStore Pets &amp; PetStore Users.PetStore Users</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

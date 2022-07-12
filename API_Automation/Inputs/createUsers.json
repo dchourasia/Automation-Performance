@@ -1,0 +1,22 @@
+[
+  {
+    "id": 0,
+    "username": "deepak.chourasia",
+    "firstName": "deepak",
+    "lastName": "chourasia",
+    "email": "deepak.chourasia@gmail.com",
+    "password": "Password1",
+    "phone": "1234567890",
+    "userStatus": 0
+  },
+  {
+    "id": 1,
+    "username": "chourasia.deepak",
+    "firstName": "deepak",
+    "lastName": "chourasia",
+    "email": "deepak.chourasia@gmail.com",
+    "password": "Password1",
+    "phone": "1234567890",
+    "userStatus": 0
+  }
+]
