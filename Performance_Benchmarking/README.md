@@ -4,7 +4,6 @@ High Level Overview
 
 * Performance Benchmarking Tool Used : **Locust**
 * Programming Language : **Python**
-* Strategy used : 
 * TestSuites : **authors_locust.py**
   * Using **HTTPUser** class to execute all the tests
   * using a **TaskSet** to create a collection of all the endpoints which need to be tested
